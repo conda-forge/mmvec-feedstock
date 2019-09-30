@@ -32,6 +32,8 @@ requirements:
     - scikit-learn
     - tqdm
     - h5py
+    - nose
+    - cython
     - biom-format
 
 test:
