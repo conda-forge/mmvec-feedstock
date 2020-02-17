@@ -24,7 +24,7 @@ requirements:
 
   run:
     - python >=3
-    - pandas <= 0.24
+    - pandas <=0.24
     - click
     - tensorflow ==1.14.0
     - scikit-bio >0.5.4
