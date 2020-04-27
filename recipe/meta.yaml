@@ -1,4 +1,4 @@
-{% set version = "1.0.3" %}
+{% set version = "1.0.4" %}
 {% set name = "mmvec" %}
 
 package:
@@ -7,13 +7,13 @@ package:
 
 source:
   url: https://pypi.io/packages/source/m/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 6fa9133455dd99eec10cf83dd631b0380617b9f1ee4acbb4e46a685570f355db
+  sha256: 1f3c37b090ae4bc1c359dbf463622ab2c1bfef171744db405bf111413d5fc98d
 
 
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
     - qiime2.plugins = mmvec.q2.plugin_setup:plugin
 
@@ -24,11 +24,12 @@ requirements:
 
   run:
     - python >=3
-    - pandas <=0.24
+    - pandas <1.0
     - click
-    - tensorflow ==1.14.0
+    - tensorflow >=1.15,<2
     - scikit-bio >0.5.4
     - seaborn
+    - numpy >1.13
     - scikit-learn
     - tqdm
     - h5py
@@ -44,7 +45,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'Neural networks for microbe-metabolite interaction analysis'
+  summary: Neural networks for microbe-metabolite interaction analysis
 
 extra:
   recipe-maintainers:
