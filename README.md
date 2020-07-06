@@ -5,7 +5,7 @@ Home: https://github.com/biocore/mmvec
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD 3-Clause
+Feedstock license: BSD-3-Clause
 
 Summary: Neural networks for microbe-metabolite interaction analysis
 
