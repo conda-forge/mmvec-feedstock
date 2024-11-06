@@ -1,4 +1,4 @@
-{% set version = "1.0.5" %}
+{% set version = "1.0.6" %}
 {% set name = "mmvec" %}
 
 package:
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/m/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 1f99c2fc2e11db62b3b7df8c00e24133a3f81d4d8f19d139cbaa13e622b5beb9
+  sha256: 58515472f14ebde94655b25ed7e187a76a6333d3a2990fbd405aa1a77df57f24
 
 
 build:
