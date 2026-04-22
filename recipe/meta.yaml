@@ -6,12 +6,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/m/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/m/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 1f99c2fc2e11db62b3b7df8c00e24133a3f81d4d8f19d139cbaa13e622b5beb9
 
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
@@ -19,11 +19,11 @@ build:
 
 requirements:
   host:
-    - python >=3
+    - python {{ python_min }}
     - pip
 
   run:
-    - python >=3
+    - python >={{ python_min }}
     - pandas <1.0
     - click
     - tensorflow >=1.15,<2
@@ -37,6 +37,8 @@ requirements:
     - biom-format
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - mmvec
 
